@@ -10,7 +10,7 @@ import {
     HttpStatus,
 } from '@nestjs/common';
 import { EditUserDto } from './dto/edit-input.dto';
-import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { UserService } from './user.service';
 
 @Controller()

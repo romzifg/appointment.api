@@ -1,7 +1,7 @@
 {
-  "name": "auth-service",
+  "name": "user-service",
   "version": "1.0.0",
-  "description": "Auth Service Appointment App",
+  "description": "User Service Appointment App",
   "author": "RCode",
   "private": true,
   "scripts": {

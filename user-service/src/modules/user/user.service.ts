@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthErrors } from 'src/utils/auth_error_response';
 import { EditUserDto } from './dto/edit-input.dto';
 import { updateUserSchema } from './schema/user.schema';
