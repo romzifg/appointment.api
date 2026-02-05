@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["schedule"]
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  NULL
+
+  @@schema("schedule")
+}
+
+model Specialist {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  doctors   Doctor[]
+
+  @@schema("schedule")
+}
+
+model Doctor {
+  id           String     @id @default(uuid())
+  name         String
+  gender       Gender     @default(NULL)
+  isActive     Boolean    @default(false)
+  specialistId Specialist @relation(fields: [spesialistId], references: [id])
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  schedules    Schedule[]
+  spesialistId String
+
+  @@schema("schedule")
+}
+
+model Schedule {
+  id          String   @id @default(uuid())
+  objective   String
+  userId      String
+  doctorId    String
+  scheduledAt DateTime
+
+  doctor Doctor @relation(fields: [doctorId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@schema("schedule")
+}

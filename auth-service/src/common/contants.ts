@@ -1,0 +1,5 @@
+export const CONSTANTS = {
+    ONE_SECOND: 1000,
+    TEN_SECOND: 10000,
+    ONE_MINUTE: 60000
+}
